@@ -20,7 +20,7 @@ export default function App() {
   const selectSite = useCallback(async (id) => {
     setCurrentSiteId(id);
     try {
-      const { headers, data } = await fetchCSVRemote(id, `/data/monitoring_${id}.csv`);
+      const { headers, data } = await fetchCSVRemote(id, `${import.meta.env.BASE_URL}data/monitoring_${id}.csv`);
       const rows = withHumidity(
         data.map((row) => {
           const o = {};
@@ -38,7 +38,7 @@ export default function App() {
   }, []);
 
   const loadSites = useCallback(async () => {
-    const { headers, data } = await fetchCSVRemote("sites", "/data/sites.csv");
+    const { headers, data } = await fetchCSVRemote("sites", `${import.meta.env.BASE_URL}data/sites.csv`);
     return data.map((row) => {
       const o = {};
       headers.forEach((h, i) => (o[h] = row[i]));

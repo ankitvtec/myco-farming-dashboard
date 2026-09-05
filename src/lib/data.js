@@ -1,6 +1,6 @@
 // Data layer: CSV fetching/parsing + all KPI computations (ported from vanilla app.js)
 
-export const DATA_DIR = "/data/";
+export const DATA_DIR = `${import.meta.env.BASE_URL}data/`;
 export const COST = { elecPriceEurPerKwh: 0.25, gridCo2KgPerKwh: 0.33 };
 export const STATUS_COLORS = {
   Operational: "#23C24E",
