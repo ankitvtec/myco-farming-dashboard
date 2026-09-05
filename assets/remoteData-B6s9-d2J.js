@@ -1,0 +1,1 @@
+const t={};function n(o){return`https://drive.google.com/uc?export=download&id=${o}`}function e(o){const r=t[o];return r&&r!=="PASTE_SITES_CSV_FILE_ID_HERE"?n(r):null}export{t as REMOTE_FILES,n as driveUrl,e as remoteUrlFor};
